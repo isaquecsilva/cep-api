@@ -41,7 +41,7 @@ func Test_NewZipcodeQueryer(t *testing.T) {
 }
 
 func Test_Execute(t *testing.T) {
-	model := NewZipcodeQueryer(&MockedZipcodeQueryer{ServiceIndex: 0}, &MockedZipcodeQueryer{ServiceIndex: 1})
+	model := NewZipcodeQueryer(&MockedZipcodeQueryer{}, &MockedZipcodeQueryer{})
 	resp := model.Execute("fake_zipcode")
 
 	expectation := &ApiResponse{
