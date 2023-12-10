@@ -22,7 +22,7 @@ func (mzq *MockedZipcodeQueryer) Execute(ctx context.Context, c chan ApiResponse
 		c <- ApiResponse{
 			StatusCode: 400,
 			Errors: []error{
-				fmt.Errorf("bad request"),
+				fmt.Errorf("bad request").Error(),
 			},
 		}
 	case <-ctx.Done():
@@ -47,7 +47,7 @@ func Test_Execute(t *testing.T) {
 	expectation := &ApiResponse{
 		StatusCode: http.StatusBadRequest,
 		Errors: []error{
-			fmt.Errorf("bad request"),
+			fmt.Errorf("bad request").Error(),
 		},
 	}
 

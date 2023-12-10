@@ -4,18 +4,20 @@ import (
 	"context"
 )
 
+type Body struct {
+	Cep         string
+	Logradouro  string
+	Complemento string
+	Bairro      string
+	Localidade  string
+	UF          string
+	Ibge        int64
+}
+
 type ApiResponse struct {
 	StatusCode int
-	Body       struct {
-		Cep         string
-		Logradouro  string
-		Complemento string
-		Bairro      string
-		Localidade  string
-		UF          string
-		Ibge        int64
-	}
-	Errors []error
+	Body
+	Errors []string
 }
 
 type ZipcodeQueryer struct {

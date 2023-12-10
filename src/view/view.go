@@ -11,9 +11,9 @@ type Endereco = struct {
 }
 
 type View struct {
-	Code     int `json:"code,omitempty"`
-	Endereco `json:"endereco,omitempty"`
-	Errors   []error `json:"errors,omitempty"`
+	Code     int      `json:"code,omitempty"`
+	Endereco          `json:"endereco,omitempty"`
+	Errors   []string `json:"errors,omitempty"`
 }
 
 func NewView(ar model.ApiResponse) *View {
